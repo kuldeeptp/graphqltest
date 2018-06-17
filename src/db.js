@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-const Conn = new Sequelize(process.env.TEST_DB || 'whitech', 'admin', 'Password', {
+const Conn = new Sequelize(process.env.TEST_DB || 'whitech', 'user', 'password', {
   host: 'localhost',
   dialect: 'mysql',
   operatorsAliases: false,

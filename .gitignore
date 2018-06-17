@@ -2,7 +2,7 @@ node_modules/
 .npm
 .eslintcache
 coverage/
-
+dist/
 # Logs
 logs
 *.log
