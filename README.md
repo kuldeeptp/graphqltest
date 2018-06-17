@@ -17,9 +17,4 @@ $ yarn run test-server
 ```
 $ yarn run test
 ```
-
-## For code coverage
-```
-$ yarn run jest
-```
 By default this application run on port 5000
