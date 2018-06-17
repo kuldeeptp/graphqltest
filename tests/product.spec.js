@@ -33,7 +33,7 @@ describe('product resolvers', () => {
     });
   });
 
-  test('create firdt product ', async () => {
+  test('create first product ', async () => {
     const response = await axios.post('http://localhost:5000/graphql', {
       query: `
       mutation addProduct {
