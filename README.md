@@ -5,6 +5,7 @@ Make sure you have installed all these prerequisites on your development machine
 * Yarn 
 * This applicaton is not yet dockerised (Application container and Database container).
 will do in spare time. 
+* Boefore starting this app configure MySQL DB credentials in src/db.js. 
 
 ```
 $ yarn
