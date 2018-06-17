@@ -1,0 +1,19 @@
+version: '3'
+services:
+  graphql:
+    build: .
+    volumes:
+      -.:/var/www/app
+    ports:
+      - "3000:3000"
+    links:
+      - mysql
+
+  mysql:
+    build: ./dbstuff
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    healthcheck:
+      test: "exit 0"
+    ports:
+      - "3307:3306"    
