@@ -1,2 +1,5 @@
 https://support.ladesk.com/061754-How-to-make-REST-calls-in-PHP
 https://www.codeofaninja.com/2017/02/create-simple-rest-api-in-php.html
+
+singleton
+https://blog.cotten.io/how-to-screw-up-singletons-in-php-3e8c83b63189
