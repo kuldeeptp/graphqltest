@@ -1,19 +1,34 @@
-version: '3'
-services:
-  graphql:
-    build: .
-    volumes:
-      -.:/var/www/app
-    ports:
-      - "3000:3000"
-    links:
-      - mysql
+nodejs:
+  build: .
+  environment:
+    TEST_DB: testwhitech
+    TEST_PORT: 5000
+  volumes:
+    - .:/var/www/app
+  links:
+    - mysql_db:mysql
+  ports:
+    - 5000:5000
+    - 3000:3000
 
-  mysql:
-    build: ./dbstuff
-    environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-    healthcheck:
-      test: "exit 0"
-    ports:
-      - "3307:3306"    
+mysql_db:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_USERNAME: root
+    MYSQL_DATABASE: testwhitech
+    MYSQL_USER: admin
+    MYSQL_PASSWORD: password
+  ports:
+    - 3306:3306
+    
+
+phpmyadmin:
+  image: corbinu/docker-phpmyadmin
+  links:
+    - mysql_db:mysql
+  ports:
+    - 8181:80
+  environment:
+    MYSQL_USERNAME: root
+    MYSQL_PASSWORD: password
