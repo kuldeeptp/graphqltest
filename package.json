@@ -6,8 +6,8 @@
   "scripts": {
     "build": "babel src -d dist ",
     "start" : "node dist index",
-    "test": "export TEST_DB='testwhitech' TEST_PORT=5000; jest",
-    "test-server" : "export TEST_DB='testwhitech' TEST_PORT=5000; babel src -d dist && node dist index "
+    "test": "export TEST_DB='testwhitech' TEST_PORT=3000; jest",
+    "test-server" : "export TEST_DB='testwhitech' TEST_PORT=3000; babel src -d dist && node dist index "
   },
   "jest": {
     "collectCoverage": true,

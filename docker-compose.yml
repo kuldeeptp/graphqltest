@@ -6,10 +6,11 @@ nodejs:
   volumes:
     - .:/var/www/app
   links:
-    - mysql_db:mysql
+    - mysql_db
+    - phpmyadmin
   ports:
-    - 5000:5000
-    - 3000:3000
+    - 8090:5000
+
 
 mysql_db:
   image: mariadb
@@ -26,7 +27,7 @@ mysql_db:
 phpmyadmin:
   image: corbinu/docker-phpmyadmin
   links:
-    - mysql_db:mysql
+    - mysql_db:mariadb
   ports:
     - 8181:80
   environment:
